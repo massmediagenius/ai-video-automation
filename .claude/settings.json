@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/mcp/Documents/ai-video-automation && git diff --quiet && git diff --cached --quiet || (git add -A && git commit -m \"auto: $(date '+%Y-%m-%d %H:%M') — content update\" && git push origin main 2>&1)"
+          }
+        ]
+      }
+    ]
+  }
+}
