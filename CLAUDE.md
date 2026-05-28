@@ -28,6 +28,24 @@
 | Narrative video | Veo 3.1 |
 | Virality scoring | Virality Predictor |
 
+## Seedance 2.0 — Confirmed UGC Workflow (BEST METHOD)
+
+Put the script directly in the prompt in single quotes. Seedance reads it and generates audio where the character says those exact words. No ElevenLabs upload, no ffmpeg merge needed.
+
+**Prompt format:**
+```
+[Character description] looking directly into camera, speaking naturally and saying: '[SCRIPT HERE]' [Visual style descriptors — UGC selfie, iPhone front camera, photorealistic, etc.]
+```
+
+**Example:**
+```
+Young platinum blonde woman looking directly into camera, speaking naturally and saying: 'I was making $500 a month on OF, ready to quit. Found OFO — it shows you what content works, builds your posting calendar, keeps you consistent. Went from $500 to $10k a month. Don't sleep on this.' Authentic UGC selfie style, natural mouth movement, nodding, gesturing, bright window light, casual kitchen setting, iPhone front camera, photorealistic
+```
+
+**Settings:** `start_image` (LILY's face), `duration: 15`, `resolution: 1080p`, `aspect_ratio: 9:16`, `generate_audio: true` (default — leave it)
+
+**Key constraint:** Keep script short enough to fit in 15 seconds naturally (~30 words max)
+
 ## Virality Predictor rules
 - Always generate 3–5× more variations than needed
 - Score everything in one batch

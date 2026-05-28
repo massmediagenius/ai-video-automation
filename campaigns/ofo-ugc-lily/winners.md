@@ -33,3 +33,16 @@
 - Seedance CDN: `https://d8j0ntlcm91z4.cloudfront.net/user_3E2miy88dQ4jNWmsRfpnOHkC6RL/hf_20260528_024633_3d6055ad-13d2-414f-97a6-f62bf3098d67.mp4`
 - ElevenLabs voice ID: `iOrg95b9JxGREjsg2T06` (saved as "Lily — locked" in account)
 - Final duration: 30.6s | 1080×1920 | 20MB
+
+---
+
+## FINAL VERSION — Script-in-Prompt (BEST)
+
+| File | Model | Notes |
+|------|-------|-------|
+| `lily_ofo_script_prompt.mp4` | seedance_2_0 | **WINNER** — script baked into prompt, seedance speaks the words natively |
+
+- Job ID: `7207c431-f990-4881-8926-34451285cd63`
+- CDN: `https://d8j0ntlcm91z4.cloudfront.net/user_3E2miy88dQ4jNWmsRfpnOHkC6RL/hf_20260528_040112_7207c431-f990-4881-8926-34451285cd63.mp4`
+- Duration: 15s | 1080×1920 | 13MB
+- No ElevenLabs, no ffmpeg — script quoted inside prompt, seedance generates matching audio natively
