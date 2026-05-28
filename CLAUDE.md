@@ -100,29 +100,47 @@ Dining area (caramel brown set): `dae423e4`
 - Erik (male) CDN: `hf_20260527_214845_d77412e7-dd38-459c-8e19-482875db0925.mp4`
 - Adriana (female) CDN: `hf_20260527_215021_3a629691-3a0c-4af8-9571-9fb88b22fc83.mp4`
 
+### OFO — UGC Single Clip (2026-05-28)
+- **Brief:** `campaigns/ofo-ugc-lily/`
+- **Winners:** `campaigns/ofo-ugc-lily/winners.md`
+- **WINNER:** `lily_ofo_script_prompt.mp4` — seedance_2_0 script-in-prompt, 15s 1080p 9:16. Job ID: `7207c431-f990-4881-8926-34451285cd63`
+- MS avatar ID: `44c343b1-693c-4b82-80df-750c5043f460` | Soul avatar ID: `99c033cb-fbcc-4dfd-9cc0-5f1340b5eaf0`
+- OFO webproduct ID: `397a845d-a5d8-4275-99bb-8b809bffc72c`
+
+### OFO — Day in the Life 9-Scene DITL (2026-05-28)
+- **Brief:** `campaigns/ofo-ditl-lily/`
+- **Winners:** `campaigns/ofo-ditl-lily/winners.md`
+- 9 scenes × 8s each = 72s total | seedance_2_0 | script-in-prompt | LILY kitchen start_image
+- Scenes 1–6: 1080p | Scenes 7–9: 720p (CDN URL passed instead of UUID — always `media_upload` first for 1080p)
+- Commit: `b1ad4dc`
+
 ---
 
 ## Session state — 2026-05-28
 
-### What was completed this session
-1. **MOTION UGC campaign verified** — 2 videos (Erik + Adriana) downloaded locally, logged in `campaigns/motion-ugc-bluerazz/winners.md`
-2. **LILY avatar reference images generated** — 20 Miami penthouse lifestyle shots (nano_banana_2), iPhone 16 Pro aesthetic, 5 scenes × varied outfits. Reference image media_id: `4e8c164e-91bc-4679-ae39-f2e0b927d261`
-3. **LILY Soul avatar trained** — soul_id: `99c033cb-fbcc-4dfd-9cc0-5f1340b5eaf0`, 18 images submitted, status: ready
-4. **OFO UGC campaign (MS version)** — `ugc_lily_ofo.mp4` with custom MS avatar `44c343b1-693c-4b82-80df-750c5043f460`
-5. **OFO UGC campaign (realistic version FINAL)** — `lily_ofo_FINAL.mp4`: seedance_2_0 visual (15s looped to 30s) + ElevenLabs "Lily — locked" voice. **This is the deliverable.**
+### What was completed
+1. **MOTION UGC campaign** — 2 videos (Erik + Adriana), logged in `campaigns/motion-ugc-bluerazz/winners.md`
+2. **LILY avatar built** — 20 reference images generated (nano_banana_2), 18 used for Soul training. soul_id: `99c033cb-fbcc-4dfd-9cc0-5f1340b5eaf0`, status: ready
+3. **OFO UGC single clip** — 3 versions generated; winner is script-in-prompt seedance job `7207c431`
+4. **OFO DITL 9-scene campaign** — all 9 scenes complete, CDN URLs logged, committed
 
 ### What still needs to be done (pick up here next session)
-- [ ] **Review `lily_ofo_FINAL.mp4`** — open in Finder, watch it, confirm you're happy with the voice sync
-- [ ] **Next campaign** — decide which brand/brief to run LILY in next (MOTION, another OF-adjacent brand, etc.)
-- [ ] **Soul Cinema test** — try `generate_video(model='soul_cinema_studio', soul_id='99c033cb...')` for a cinematic LILY video
+- [ ] **Regenerate DITL scenes 7–9 at 1080p** — upload LILY kitchen PNG via `media_upload` → get UUID → resubmit scenes 7-9 with UUID as start_image
+- [ ] **Soul Cinema test** — `generate_video(model='soul_cinema_studio', soul_id='99c033cb-fbcc-4dfd-9cc0-5f1340b5eaf0', prompt='...')` for a cinematic LILY clip
+- [ ] **Next campaign** — decide next brand/brief to run LILY in
 
 ### Key decisions made
 - Skipping Publer, Klaviyo, Motion Blur, Shopify for now — just Higgsfield + Claude Code + GitHub
 - No Vercel/Next.js needed for this project — pure automation pipeline
 - Raw video files are gitignored; only output URLs/markdown files get committed
 - Avatar training images: always use 15-20 images, single consistent setting preferred (penthouse worked well), iPhone 16 Pro aesthetic prompt produces best results
-- **Realistic UGC workflow:** seedance_2_0 (visual, start_image from LILY) + ElevenLabs TTS (LILY voice) → ffmpeg merge. More realistic than Marketing Studio. Use this for premium deliverables.
+- **Script-in-prompt is the canonical seedance workflow** — no ElevenLabs, no ffmpeg needed. Best quality, most consistent.
+- **1080p rule:** Always `media_upload` + `media_confirm` to get a UUID before using any image as start_image. Passing a CDN URL directly → 720p output.
 - **ElevenLabs voice preview IDs expire** — always check `/v1/voices` first; saved voices persist
+
+### LILY start_image (kitchen, face-on)
+CDN URL: `https://d8j0ntlcm91z4.cloudfront.net/user_3E2miy88dQ4jNWmsRfpnOHkC6RL/hf_20260528_015324_7695e4e5-e966-4039-b2a5-d9623af9471c.png`
+> Upload via `media_upload` to get a UUID before using as start_image to ensure 1080p output
 
 ### Reference URLs
 - GitHub repo: https://github.com/massmediagenius/ai-video-automation
