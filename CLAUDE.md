@@ -46,7 +46,7 @@
 
 | Name | Soul ID | Type | Training images | Status | Notes |
 |------|---------|------|-----------------|--------|-------|
-| LILY | `99c033cb-fbcc-4dfd-9cc0-5f1340b5eaf0` | soul_2 | 18 Miami penthouse shots | training (~10 min from 2026-05-28) | Platinum blonde, petite curvy, reference: `4e8c164e-91bc-4679-ae39-f2e0b927d261` |
+| LILY | `99c033cb-fbcc-4dfd-9cc0-5f1340b5eaf0` | soul_2 | 18 Miami penthouse shots | **ready** | Platinum blonde, petite curvy, reference: `4e8c164e-91bc-4679-ae39-f2e0b927d261` |
 
 ### LILY — training image job IDs (18 images)
 Kitchen (beige leggings + sports bra): `39ee7285`, `d256abf8`, `7695e4e5`, `6b57e292`
