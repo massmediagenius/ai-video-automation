@@ -42,29 +42,56 @@
 
 ---
 
-## Session state — 2026-05-27
+## Trained Soul Avatars
+
+| Name | Soul ID | Type | Training images | Status | Notes |
+|------|---------|------|-----------------|--------|-------|
+| LILY | `99c033cb-fbcc-4dfd-9cc0-5f1340b5eaf0` | soul_2 | 18 Miami penthouse shots | training (~10 min from 2026-05-28) | Platinum blonde, petite curvy, reference: `4e8c164e-91bc-4679-ae39-f2e0b927d261` |
+
+### LILY — training image job IDs (18 images)
+Kitchen (beige leggings + sports bra): `39ee7285`, `d256abf8`, `7695e4e5`, `6b57e292`
+Balcony (white denim shorts + tank): `ab008b9c`, `7c4dbe2b`, `c9933373`
+Bedroom (sage green bralette + shorts): `20d32526`, `4d899c6f`, `c568bf37`
+Window sill (chocolate brown tights): `70fb3135`, `04cca573`, `2e54b59e`
+Living room (black biker shorts + white crop): `3c2bba1b`, `0343d3eb`, `ec0c5456`, `3e9746c8`
+Dining area (caramel brown set): `dae423e4`
+
+> Once LILY is `ready`, use her with: `generate_image(model='soul_2', soul_id='<LILY_soul_id>', prompt='...')`
+> Or video: `generate_video(model='soul_cinema_studio', soul_id='<LILY_soul_id>', prompt='...')`
+
+---
+
+## Completed Campaigns
+
+### MOTION Limitless Pouches — Blue Raspberry UGC (2026-05-27)
+- **Brief:** `campaigns/motion-ugc-bluerazz/`
+- **Winners:** `campaigns/motion-ugc-bluerazz/winners.md`
+- **Product media_id:** `f16e0790-895b-4536-9cd5-d201fcba84ff`
+- **Product image media_id:** `4f973707-9a4c-4f83-aaca-2e605c1109c5`
+- Erik (male) CDN: `hf_20260527_214845_d77412e7-dd38-459c-8e19-482875db0925.mp4`
+- Adriana (female) CDN: `hf_20260527_215021_3a629691-3a0c-4af8-9571-9fb88b22fc83.mp4`
+
+---
+
+## Session state — 2026-05-28
 
 ### What was completed this session
-1. **Higgsfield MCP installed** — `claude mcp add --transport http --scope user higgsfield https://mcp.higgsfield.ai/mcp` — added to user-level Claude config (`~/.claude.json`). Verify with `claude mcp list`.
-2. **Higgsfield CLI installed** — `npm install -g @higgsfield/cli` via `~/.npm-global`. Version 0.1.40. `~/.npm-global/bin` added to PATH in `~/.zshrc`.
-3. **Project scaffolded** at `/Users/mcp/Documents/ai-video-automation/`
-   - `.gitignore` — excludes .env, node_modules, raw video files
-   - `CLAUDE.md` — this file
-   - `briefs/template.md` — campaign brief template
-   - `.claude/settings.json` — auto-push hook (Stop hook)
-4. **GitHub repo created and pushed** — https://github.com/massmediagenius/ai-video-automation
-5. **Auto-push hook wired** — `.claude/settings.json` Stop hook: on every Claude session end, if there are uncommitted changes → `git add -A` → commit with timestamp → `git push origin main`
+1. **MOTION UGC campaign verified** — 2 videos (Erik + Adriana) downloaded locally, logged in `campaigns/motion-ugc-bluerazz/winners.md`
+2. **LILY avatar reference images generated** — 20 Miami penthouse lifestyle shots (nano_banana_2), iPhone 16 Pro aesthetic, 5 scenes × varied outfits. Reference image media_id: `4e8c164e-91bc-4679-ae39-f2e0b927d261`
+3. **LILY Soul avatar training kicked off** — 18 user-approved images submitted to `show_characters(action='train', name='LILY', type='soul_2')`. Training takes ~10 min.
 
 ### What still needs to be done (pick up here next session)
-- [ ] **`higgsfield auth login`** — USER must run this in terminal (opens browser OAuth). Command: `higgsfield auth login`
-- [ ] **Install Higgsfield skills into Claude Code** — `npx skills add higgsfield-ai/skills` (run after auth)
-- [ ] **Run first test campaign** — create a brief in `briefs/`, tell Claude to run it, verify Higgsfield MCP responds
-- [ ] Decide which client/brand to run the first real campaign for (MOTION, Kyle.teacher, or new client)
+- [ ] **Confirm LILY soul_id** — run `show_characters(action='list')` to get her soul_id once training completes (~10 min from 2026-05-28)
+- [ ] **Update LILY soul_id** in the Trained Soul Avatars table above
+- [ ] **Test LILY** — generate a test image with `soul_2` model + her soul_id
+- [ ] **First real campaign with LILY** — decide what brand/brief to run her in (e.g. MOTION, lifestyle brand, etc.)
+- [ ] **NSFW note:** When using LILY with reference image, avoid swimwear/bikini prompts — use athletic sets, shorts, dresses instead
 
 ### Key decisions made
-- Skipping Publer, Klaviyo, Motion, Shopify for now — just Higgsfield + Claude Code + GitHub
+- Skipping Publer, Klaviyo, Motion Blur, Shopify for now — just Higgsfield + Claude Code + GitHub
 - No Vercel/Next.js needed for this project — pure automation pipeline
 - Raw video files are gitignored; only output URLs/markdown files get committed
+- Avatar training images: always use 15-20 images, single consistent setting preferred (penthouse worked well), iPhone 16 Pro aesthetic prompt produces best results
 
 ### Reference URLs
 - GitHub repo: https://github.com/massmediagenius/ai-video-automation
