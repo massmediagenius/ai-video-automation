@@ -61,6 +61,17 @@ Dining area (caramel brown set): `dae423e4`
 
 ---
 
+## ElevenLabs
+
+- **API key:** `sk_830443f01d92bc37019c0bc4266bae0a2b4103ba665dcc6c`
+- **LILY voice ID:** `iOrg95b9JxGREjsg2T06` (saved as "Lily — locked", category: generated)
+- **Workflow for realistic UGC:** Generate TTS with LILY voice → upload to Higgsfield OR merge locally with ffmpeg
+- **ffmpeg merge command:** `ffmpeg -stream_loop 2 -i visual.mp4 -i voice.mp3 -map 0:v -map 1:a -c:v libx264 -preset fast -crf 18 -c:a aac -b:a 192k -t <audio_duration> output.mp4`
+- **Voice Design:** Use `/v1/text-to-voice/create-previews` to generate custom voices; previews expire between sessions — save immediately. If expired, regenerate and check account for saved voices at `/v1/voices`.
+- **Recommended TTS settings:** `stability: 0.4, similarity_boost: 0.85, style: 0.3, use_speaker_boost: true, model: eleven_multilingual_v2`
+
+---
+
 ## Completed Campaigns
 
 ### MOTION Limitless Pouches — Blue Raspberry UGC (2026-05-27)
@@ -78,20 +89,22 @@ Dining area (caramel brown set): `dae423e4`
 ### What was completed this session
 1. **MOTION UGC campaign verified** — 2 videos (Erik + Adriana) downloaded locally, logged in `campaigns/motion-ugc-bluerazz/winners.md`
 2. **LILY avatar reference images generated** — 20 Miami penthouse lifestyle shots (nano_banana_2), iPhone 16 Pro aesthetic, 5 scenes × varied outfits. Reference image media_id: `4e8c164e-91bc-4679-ae39-f2e0b927d261`
-3. **LILY Soul avatar training kicked off** — 18 user-approved images submitted to `show_characters(action='train', name='LILY', type='soul_2')`. Training takes ~10 min.
+3. **LILY Soul avatar trained** — soul_id: `99c033cb-fbcc-4dfd-9cc0-5f1340b5eaf0`, 18 images submitted, status: ready
+4. **OFO UGC campaign (MS version)** — `ugc_lily_ofo.mp4` with custom MS avatar `44c343b1-693c-4b82-80df-750c5043f460`
+5. **OFO UGC campaign (realistic version FINAL)** — `lily_ofo_FINAL.mp4`: seedance_2_0 visual (15s looped to 30s) + ElevenLabs "Lily — locked" voice. **This is the deliverable.**
 
 ### What still needs to be done (pick up here next session)
-- [ ] **Confirm LILY soul_id** — run `show_characters(action='list')` to get her soul_id once training completes (~10 min from 2026-05-28)
-- [ ] **Update LILY soul_id** in the Trained Soul Avatars table above
-- [ ] **Test LILY** — generate a test image with `soul_2` model + her soul_id
-- [ ] **First real campaign with LILY** — decide what brand/brief to run her in (e.g. MOTION, lifestyle brand, etc.)
-- [ ] **NSFW note:** When using LILY with reference image, avoid swimwear/bikini prompts — use athletic sets, shorts, dresses instead
+- [ ] **Review `lily_ofo_FINAL.mp4`** — open in Finder, watch it, confirm you're happy with the voice sync
+- [ ] **Next campaign** — decide which brand/brief to run LILY in next (MOTION, another OF-adjacent brand, etc.)
+- [ ] **Soul Cinema test** — try `generate_video(model='soul_cinema_studio', soul_id='99c033cb...')` for a cinematic LILY video
 
 ### Key decisions made
 - Skipping Publer, Klaviyo, Motion Blur, Shopify for now — just Higgsfield + Claude Code + GitHub
 - No Vercel/Next.js needed for this project — pure automation pipeline
 - Raw video files are gitignored; only output URLs/markdown files get committed
 - Avatar training images: always use 15-20 images, single consistent setting preferred (penthouse worked well), iPhone 16 Pro aesthetic prompt produces best results
+- **Realistic UGC workflow:** seedance_2_0 (visual, start_image from LILY) + ElevenLabs TTS (LILY voice) → ffmpeg merge. More realistic than Marketing Studio. Use this for premium deliverables.
+- **ElevenLabs voice preview IDs expire** — always check `/v1/voices` first; saved voices persist
 
 ### Reference URLs
 - GitHub repo: https://github.com/massmediagenius/ai-video-automation
