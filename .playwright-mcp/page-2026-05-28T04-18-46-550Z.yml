@@ -1,0 +1,44 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation "primary navigation" [ref=e3]:
+      - link "Higgsfield home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+      - generic [ref=e8]:
+        - link "Explore" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e11]:
+          - button "Image" [ref=e13] [cursor=pointer]
+          - button "Video" [ref=e15] [cursor=pointer]
+          - button "Audio" [ref=e17] [cursor=pointer]
+        - link "Supercomputer New" [ref=e19] [cursor=pointer]:
+          - /url: /supercomputer
+          - generic [ref=e26]: Supercomputer
+          - generic [ref=e27]: New
+        - link "MCP & CLI New" [ref=e28] [cursor=pointer]:
+          - /url: /cli
+          - text: MCP & CLI
+          - generic [ref=e29]: New
+        - link "Plugins New" [ref=e30] [cursor=pointer]:
+          - /url: /adobe-plugin
+          - text: Plugins
+          - generic [ref=e31]: New
+        - link "Collab" [ref=e32] [cursor=pointer]:
+          - /url: /generate
+        - link "Marketing Studio" [ref=e33] [cursor=pointer]:
+          - /url: /marketing-studio/product
+        - link "Cinema Studio" [ref=e34] [cursor=pointer]:
+          - /url: /cinema-studio?autoSelectFolder=true
+        - link "AI Influencer" [ref=e35] [cursor=pointer]:
+          - /url: /ai-influencer-studio
+        - link "Canvas" [ref=e36] [cursor=pointer]:
+          - /url: /canvas
+        - link "Apps" [ref=e37] [cursor=pointer]:
+          - /url: /apps
+      - generic [ref=e39]:
+        - img [ref=e43] [cursor=pointer]
+        - img [ref=e46]
+  - main [ref=e49]
+  - alert [ref=e51]
+  - listbox "Typeahead menu"
+  - listbox "Typeahead menu"

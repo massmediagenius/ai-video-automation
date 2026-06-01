@@ -114,15 +114,23 @@ Dining area (caramel brown set): `dae423e4`
 - Scenes 1–6: 1080p | Scenes 7–9: 720p (CDN URL passed instead of UUID — always `media_upload` first for 1080p)
 - Commit: `b1ad4dc`
 
+### David Saylor — News Anchor Clip (2026-05-31)
+- **Model:** seedance_2_0 | 5s | 1080p | 16:9
+- **Job ID:** `de9091fb-e25c-4baf-9db7-83e3626e950a`
+- **CDN:** `https://d8j0ntlcm91z4.cloudfront.net/user_3E2miy88dQ4jNWmsRfpnOHkC6RL/hf_20260529_140245_de9091fb-e25c-4baf-9db7-83e3626e950a.mp4`
+- **Script:** "he was facing murder charges at 18 and battling drug addiction that nearly destroyed everything"
+- **Style:** Professional male anchor, dark navy suit, CNN-style news desk, broadcast studio lighting, 16:9
+
 ---
 
-## Session state — 2026-05-28
+## Session state — 2026-05-31
 
 ### What was completed
 1. **MOTION UGC campaign** — 2 videos (Erik + Adriana), logged in `campaigns/motion-ugc-bluerazz/winners.md`
 2. **LILY avatar built** — 20 reference images generated (nano_banana_2), 18 used for Soul training. soul_id: `99c033cb-fbcc-4dfd-9cc0-5f1340b5eaf0`, status: ready
 3. **OFO UGC single clip** — 3 versions generated; winner is script-in-prompt seedance job `7207c431`
 4. **OFO DITL 9-scene campaign** — all 9 scenes complete, CDN URLs logged, committed
+5. **David Saylor news anchor clip** — 5s 1080p 16:9 broadcast-style, job `de9091fb`, CDN logged above
 
 ### What still needs to be done (pick up here next session)
 - [ ] **Regenerate DITL scenes 7–9 at 1080p** — upload LILY kitchen PNG via `media_upload` → get UUID → resubmit scenes 7-9 with UUID as start_image
